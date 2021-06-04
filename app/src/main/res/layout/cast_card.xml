@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:background="@drawable/cast_circle"
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="90dp"
+            app:cardCornerRadius="50dp"
+            android:layout_centerInParent="true"
+            android:layout_height="90dp">
+        <ImageView
+            android:id="@+id/cast_profile_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/cast_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:text="Name"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/cast_character"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:fontFamily="sans-serif"
+            android:maxLines="2"
+            android:text="Character"
+            android:textSize="10sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="2dp"
+    app:layout_constrainedWidth="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/card_background">
+
+        <ImageView
+            android:id="@+id/movie_poster_img"
+            android:layout_width="110dp"
+            android:layout_height="160dp"
+            android:layout_margin="6dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/movie_img"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action, Comedy"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/rate_bar"
+            app:layout_constraintStart_toStartOf="@+id/movie_title" />
+
+        <TextView
+            android:id="@+id/movie_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:layout_marginStart="8dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rate_bar"
+            app:layout_constraintStart_toEndOf="@+id/rate_bar"
+            app:layout_constraintTop_toTopOf="@+id/rate_bar" />
+
+        <RatingBar
+            android:id="@+id/rate_bar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/RatingBar"
+            android:stepSize=".1"
+            android:layout_marginBottom="8dp"
+            android:numStars="5"
+            android:isIndicator="true"
+            app:layout_constraintBottom_toTopOf="@+id/movie_year"
+            app:layout_constraintStart_toStartOf="@+id/movie_title" />
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="title"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/movie_poster_img" />
+
+        <TextView
+            android:id="@+id/movie_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2021"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/movie_poster_img"
+            app:layout_constraintStart_toStartOf="@+id/movie_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
