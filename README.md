@@ -1,12 +1,10 @@
 # Movies
 # Screen shots
 
-<img src="https://user-images.githubusercontent.com/30687866/121476492-07b66180-c9c7-11eb-9569-4f263613e3cf.jpg" width="250"> | 
-<img src="https://user-images.githubusercontent.com/30687866/121476725-4f3ced80-c9c7-11eb-9254-3fd928741d5f.jpg" width="250"> |
-<img src="https://user-images.githubusercontent.com/30687866/121477024-9dea8780-c9c7-11eb-8929-0af133207c61.jpg" width="250"> 
-<img src="https://user-images.githubusercontent.com/30687866/121477841-9e375280-c9c8-11eb-8e49-c999cdb8d54b.jpg" width="250"> |
-<img src="https://user-images.githubusercontent.com/30687866/121477893-ac856e80-c9c8-11eb-9944-2744d67deee0.jpg" width="250"> 
-<img src="https://user-images.githubusercontent.com/30687866/121478026-d6d72c00-c9c8-11eb-859b-4fadf0cb19ba.jpg" width="250">|
-<img src="https://user-images.githubusercontent.com/30687866/121478099-ed7d8300-c9c8-11eb-9761-1a51cf399b6e.jpg" width="250">|
-<img src="https://user-images.githubusercontent.com/30687866/121478134-fa01db80-c9c8-11eb-90a4-3a44171bba50.jpg" width="250">
-<img src="https://user-images.githubusercontent.com/30687866/121498954-35a6a080-c9dd-11eb-9dc8-ebff2bc61d81.png" width="250">
+<img src="https://user-images.githubusercontent.com/30687866/121500517-aac6a580-c9de-11eb-915a-8c1e75ec2538.png" width="250"> | 
+<img src="https://user-images.githubusercontent.com/30687866/121500526-ac906900-c9de-11eb-9f6e-990e8870db7a.png" width="250"> |
+<img src="https://user-images.githubusercontent.com/30687866/121500538-aef2c300-c9de-11eb-85b6-1e667d74be32.png" width="250"> 
+<img src="https://user-images.githubusercontent.com/30687866/121500547-b1551d00-c9de-11eb-8ee7-1b4028b1a637.png" width="250"> |
+<img src="https://user-images.githubusercontent.com/30687866/121500556-b4500d80-c9de-11eb-9dfe-a2e9bcaa159f.png" width="250"> 
+<img src="https://user-images.githubusercontent.com/30687866/121500562-b619d100-c9de-11eb-86b6-8055a03dfef3.png" width="250">
+
