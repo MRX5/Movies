@@ -27,44 +27,45 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class MovieDetails extends AppCompatActivity implements DetailsActivityContract.View{
-    public static final String MOVIE_ID_KEY="movie_id_key";
+public class MovieDetails extends AppCompatActivity implements DetailsActivityContract.View {
+    public static final String MOVIE_ID_KEY = "movie_id_key";
     ActivityMovieDetailsBinding mDataBinding;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
     private YouTubePlayerView playerView;
     private CastRecyclerAdapter adapter;
-    private float curr_second=0f;
+    private float curr_second = 0f;
     private DetailsActivityPresenter presenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDataBinding= DataBindingUtil.setContentView(this,R.layout.activity_movie_details);
+        mDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
 
         setupViews();
 
         setToolbar();
 
-        Intent intent =getIntent();
-        int movieId=intent.getIntExtra(MOVIE_ID_KEY,1);
+        Intent intent = getIntent();
+        int movieId = intent.getIntExtra(MOVIE_ID_KEY, 1);
 
-        presenter=new DetailsActivityPresenter(this);
+        presenter = new DetailsActivityPresenter(this);
         presenter.requestMovieData(movieId);
         presenter.getMovieTrailer(movieId);
     }
 
     private void setupViews() {
-        progressBar=mDataBinding.movieCover.backdropProgressBar;
-        playerView=findViewById(R.id.viedo_view);
-        recyclerView=mDataBinding.movieContent.castRecyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        adapter=new CastRecyclerAdapter(this);
+        progressBar = mDataBinding.movieCover.backdropProgressBar;
+        playerView = findViewById(R.id.viedo_view);
+        recyclerView = mDataBinding.movieContent.castRecyclerView;
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        adapter = new CastRecyclerAdapter(this);
         recyclerView.setAdapter(adapter);
 
     }
 
     private void setToolbar() {
-        Toolbar toolbar=mDataBinding.movieCover.toolbar;
+        Toolbar toolbar = mDataBinding.movieCover.toolbar;
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -83,11 +84,11 @@ public class MovieDetails extends AppCompatActivity implements DetailsActivityCo
         mDataBinding.movieCover.movieTitle.setText(movie.getTitle());
         mDataBinding.movieCover.movieYear.setText(movie.getYear());
         mDataBinding.movieCover.movieRate.setText(String.valueOf(movie.getVote()));
-        String length= Helper.convertToHours(movie.getLength());
+        String length = Helper.convertToHours(movie.getLength());
         mDataBinding.movieContent.movieLength.setText(length);
         mDataBinding.movieContent.movieLanguage.setText(movie.getLanguage());
-        List<Genres> genres=movie.getGenres();
-        String categories=Helper.getCategories(genres);
+        List<Genres> genres = movie.getGenres();
+        String categories = Helper.getCategories(genres);
         mDataBinding.movieContent.movieCategory.setText(categories);
         mDataBinding.movieContent.movieOverview.setText(movie.getDescription());
         adapter.setCasts(movie.getCredits().getCast());
@@ -95,23 +96,22 @@ public class MovieDetails extends AppCompatActivity implements DetailsActivityCo
 
     @Override
     public void getTrailer(Video video) {
-        final String TrailerKey=Helper.getTrailerKey(video);
+        final String TrailerKey = Helper.getTrailerKey(video);
         getLifecycle().addObserver(playerView);
         playerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
             @Override
             public void onReady(YouTubePlayer youTubePlayer) {
                 String videoId = TrailerKey;
-                if(videoId!=null) {
+                if (videoId != null) {
                     youTubePlayer.cueVideo(videoId, curr_second);
-                }
-                else
-                {
+                } else {
                     youTubePlayer.pause();
                 }
             }
+
             @Override
             public void onCurrentSecond(YouTubePlayer youTubePlayer, float second) {
-                curr_second=second;
+                curr_second = second;
                 super.onCurrentSecond(youTubePlayer, second);
             }
         });
@@ -119,7 +119,7 @@ public class MovieDetails extends AppCompatActivity implements DetailsActivityCo
 
     @Override
     public void onResponseFailure(Throwable t) {
-        Toast.makeText(this,t.getMessage(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, t.getMessage(), Toast.LENGTH_SHORT).show();
         Picasso.get().load(R.drawable.placeholder_backdrop).into(mDataBinding.movieCover.movieBackdrop);
         hideProgress();
     }

@@ -19,30 +19,30 @@ import java.util.List;
 
 public class CastRecyclerAdapter extends RecyclerView.Adapter<CastRecyclerAdapter.movieViewHolder> {
 
-    List<Cast>casts;
+    List<Cast> casts;
     Context context;
 
     public CastRecyclerAdapter(Context context) {
         this.context = context;
     }
 
-    public void setCasts(List<Cast>casts) {
-        this.casts=casts;
+    public void setCasts(List<Cast> casts) {
+        this.casts = casts;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public CastRecyclerAdapter.movieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.cast_card,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.cast_card, parent, false);
         return new movieViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull movieViewHolder holder, int position) {
-        String castImageUrl=casts.get(position).getProfilePicture();
-        String castName=casts.get(position).getName();
-        String castCharacter=casts.get(position).getCharacter();
+        String castImageUrl = casts.get(position).getProfilePicture();
+        String castName = casts.get(position).getName();
+        String castCharacter = casts.get(position).getCharacter();
 
         Picasso.get().load(castImageUrl).placeholder(R.drawable.placeholder_poster).into(holder.castProfileImage);
         holder.castName.setText(castName);
@@ -51,24 +51,22 @@ public class CastRecyclerAdapter extends RecyclerView.Adapter<CastRecyclerAdapte
 
     @Override
     public int getItemCount() {
-        if(casts==null)
-        {
+        if (casts == null) {
             return 0;
         }
         return casts.size();
     }
 
-    public class movieViewHolder extends RecyclerView.ViewHolder
-    {
+    public class movieViewHolder extends RecyclerView.ViewHolder {
         ImageView castProfileImage;
         TextView castName;
         TextView castCharacter;
 
         public movieViewHolder(@NonNull View itemView) {
             super(itemView);
-            castProfileImage=itemView.findViewById(R.id.cast_profile_img);
-            castName=itemView.findViewById(R.id.cast_name);
-            castCharacter=itemView.findViewById(R.id.cast_character);
+            castProfileImage = itemView.findViewById(R.id.cast_profile_img);
+            castName = itemView.findViewById(R.id.cast_name);
+            castCharacter = itemView.findViewById(R.id.cast_character);
         }
     }
 }

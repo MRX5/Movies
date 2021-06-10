@@ -11,4 +11,11 @@
         <item name="colorControlNormal">@android:color/darker_gray</item>
         <item name="colorControlActivated">@color/yellow</item>
     </style>
+
+    <style name="NoActionBar" parent="Theme.Movies">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
 </resources>

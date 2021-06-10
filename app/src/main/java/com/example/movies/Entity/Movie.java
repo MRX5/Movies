@@ -26,7 +26,19 @@ public class Movie {
     private int length;
     @SerializedName("original_language")
     private String language;
+
     private List<Genres> genres;
+
+    private List<Integer> genre_ids;
+
+    public List<Integer> getGenre_ids() {
+        return genre_ids;
+    }
+
+    public void setGenre_ids(List<Integer> genre_ids) {
+        this.genre_ids = genre_ids;
+    }
+
 
     public int getMovieID() {
         return movieID;
@@ -45,8 +57,9 @@ public class Movie {
     }
 
     public String getPoster() {
-        if(poster!=null)
-        {return TMDB_IMAGE_PATH + poster;}
+        if (poster != null) {
+            return TMDB_IMAGE_PATH + poster;
+        }
         return null;
     }
 
@@ -63,7 +76,7 @@ public class Movie {
     }
 
     public String getYear() {
-        if(year!=null && year.length()!=0) {
+        if (year != null && year.length() != 0) {
             return year.substring(0, 4);
         }
         return "no date";

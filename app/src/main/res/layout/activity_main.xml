@@ -17,6 +17,7 @@
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/yellow"
         app:tabMaxWidth="0dp"
+        app:tabSelectedTextColor="@color/yellow"
         app:tabTextColor="@color/white">
 
     </com.google.android.material.tabs.TabLayout>
