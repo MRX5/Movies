@@ -32,6 +32,7 @@
             android:layout_height="130dp"
             android:scaleType="centerCrop"
             android:src="@drawable/popcorn"
+            android:contentDescription="Image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/cairo_semi_bold"
-            android:text="There is no movies"
+            android:text="@string/search_for_a_movie"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/imageView"

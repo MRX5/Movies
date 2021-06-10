@@ -24,12 +24,15 @@ public class Helper {
     public static String getCategories(List<Genres> genres) {
 
         int counter = 2;
-        String result = "";
+        StringBuilder result=new StringBuilder();
         for (int i = 0; i < genres.size() && counter != 0; i++, counter--) {
             String category = genres.get(i).getName();
-            result += category + "\n";
+            result.append(category);
+            if (i == 0) {                  // add new line for first line only
+                result.append("\n");
+            }
         }
-        return result;
+        return result.toString();
     }
 
     public static String getTrailerKey(Video video) {
